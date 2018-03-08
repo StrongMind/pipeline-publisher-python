@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import pipeline-publisher-python
-from pipeline-publisher-python.api.messages_api import MessagesApi  # noqa: E501
-from pipeline-publisher-python.rest import ApiException
+import pipeline_publisher
+from pipeline_publisher.api.messages_api import MessagesApi  # noqa: E501
+from pipeline_publisher.rest import ApiException
 
 
 class TestMessagesApi(unittest.TestCase):
     """MessagesApi unit test stubs"""
 
     def setUp(self):
-        self.api = pipeline-publisher-python.api.messages_api.MessagesApi()  # noqa: E501
+        self.api = pipeline_publisher.api.messages_api.MessagesApi()  # noqa: E501
 
     def tearDown(self):
         pass

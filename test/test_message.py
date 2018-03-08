@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import pipeline-publisher-python
-from pipeline-publisher-python.models.message import Message  # noqa: E501
-from pipeline-publisher-python.rest import ApiException
+import pipeline_publisher
+from pipeline_publisher.models.message import Message  # noqa: E501
+from pipeline_publisher.rest import ApiException
 
 
 class TestMessage(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestMessage(unittest.TestCase):
     def testMessage(self):
         """Test Message"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = pipeline-publisher-python.models.message.Message()  # noqa: E501
+        # model = pipeline_publisher.models.message.Message()  # noqa: E501
         pass
 
 

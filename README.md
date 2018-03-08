@@ -23,7 +23,7 @@ pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
 
 Then import the package:
 ```python
-import pipeline-publisher-python 
+import pipeline_publisher 
 ```
 
 ### Setuptools
@@ -37,7 +37,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import pipeline-publisher-python
+import pipeline_publisher
 ```
 
 ## Getting Started
@@ -47,16 +47,16 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```python
 from __future__ import print_function
 import time
-import pipeline-publisher-python
-from pipeline-publisher-python.rest import ApiException
+import pipeline_publisher
+from pipeline_publisher.rest import ApiException
 from pprint import pprint
 
 # Configure HTTP basic authorization: basic
-pipeline-publisher-python.configuration.username = 'YOUR_USERNAME'
-pipeline-publisher-python.configuration.password = 'YOUR_PASSWORD'
+pipeline_publisher.configuration.username = 'YOUR_USERNAME'
+pipeline_publisher.configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
-api_instance = pipeline-publisher-python.MessagesApi()
-message = pipeline-publisher-python.Message() # Message | Note: At least one key/value pair for identifiers field is required.
+api_instance = pipeline_publisher.MessagesApi()
+message = pipeline_publisher.Message() # Message | Note: At least one key/value pair for identifiers field is required.
 
 try:
     # Creates a message on the pipeline

@@ -23,9 +23,9 @@ import tempfile
 import six
 from six.moves.urllib.parse import quote
 
-from pipeline-publisher-python.configuration import Configuration
-import pipeline-publisher-python.models
-from pipeline-publisher-python import rest
+from pipeline_publisher.configuration import Configuration
+import pipeline_publisher.models
+from pipeline_publisher import rest
 
 
 class ApiClient(object):
@@ -258,7 +258,7 @@ class ApiClient(object):
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(pipeline-publisher-python.models, klass)
+                klass = getattr(pipeline_publisher.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)
