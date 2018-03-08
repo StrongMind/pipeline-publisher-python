@@ -15,4 +15,4 @@
 from __future__ import absolute_import
 
 # import models into model package
-from pipeline_publisher.models.message import Message
+from pipeline_publisher_python.models.message import Message

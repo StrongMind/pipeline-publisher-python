@@ -16,10 +16,10 @@
 from __future__ import absolute_import
 
 # import apis into sdk package
-from pipeline_publisher.api.messages_api import MessagesApi
+from pipeline_publisher_python.api.messages_api import MessagesApi
 
 # import ApiClient
-from pipeline_publisher.api_client import ApiClient
-from pipeline_publisher.configuration import Configuration
+from pipeline_publisher_python.api_client import ApiClient
+from pipeline_publisher_python.configuration import Configuration
 # import models into sdk package
-from pipeline_publisher.models.message import Message
+from pipeline_publisher_python.models.message import Message
