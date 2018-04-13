@@ -15,4 +15,6 @@
 from __future__ import absolute_import
 
 # import models into model package
+from pipeline_publisher_python.models.inline_response_200 import InlineResponse200
+from pipeline_publisher_python.models.inline_response_200_messages_received import InlineResponse200MessagesReceived
 from pipeline_publisher_python.models.message import Message

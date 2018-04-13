@@ -78,6 +78,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [InlineResponse200](docs/InlineResponse200.md)
+ - [InlineResponse200MessagesReceived](docs/InlineResponse200MessagesReceived.md)
  - [Message](docs/Message.md)
 
 
