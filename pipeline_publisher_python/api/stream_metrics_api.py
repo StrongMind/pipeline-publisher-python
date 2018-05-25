@@ -47,8 +47,8 @@ class StreamMetricsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async"):
             return self.stream_metrics_get_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.stream_metrics_get_with_http_info(**kwargs)  # noqa: E501
@@ -69,29 +69,26 @@ class StreamMetricsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['count_since_timestamp']  # noqa: E501
-        all_params.append('async')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["count_since_timestamp"]  # noqa: E501
+        all_params.append("async")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method stream_metrics_get" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method stream_metrics_get" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'count_since_timestamp' in params:
-            query_params.append(('count_since_timestamp', params['count_since_timestamp']))  # noqa: E501
+        if "count_since_timestamp" in params:
+            query_params.append(("count_since_timestamp", params["count_since_timestamp"]))  # noqa: E501
 
         header_params = {}
 
@@ -100,28 +97,30 @@ class StreamMetricsApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basic']  # noqa: E501
+        auth_settings = ["basic"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/stream_metrics', 'GET',
+            "/stream_metrics",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse200',  # noqa: E501
+            response_type="InlineResponse200",  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async=params.get("async"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )

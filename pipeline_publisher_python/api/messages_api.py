@@ -47,8 +47,8 @@ class MessagesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        kwargs["_return_http_data_only"] = True
+        if kwargs.get("async"):
             return self.messages_post_with_http_info(message, **kwargs)  # noqa: E501
         else:
             (data) = self.messages_post_with_http_info(message, **kwargs)  # noqa: E501
@@ -69,24 +69,20 @@ class MessagesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['message']  # noqa: E501
-        all_params.append('async')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = ["message"]  # noqa: E501
+        all_params.append("async")
+        all_params.append("_return_http_data_only")
+        all_params.append("_preload_content")
+        all_params.append("_request_timeout")
 
         params = locals()
-        for key, val in six.iteritems(params['kwargs']):
+        for key, val in six.iteritems(params["kwargs"]):
             if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method messages_post" % key
-                )
+                raise TypeError("Got an unexpected keyword argument '%s'" " to method messages_post" % key)
             params[key] = val
-        del params['kwargs']
+        del params["kwargs"]
         # verify the required parameter 'message' is set
-        if ('message' not in params or
-                params['message'] is None):
+        if "message" not in params or params["message"] is None:
             raise ValueError("Missing the required parameter `message` when calling `messages_post`")  # noqa: E501
 
         collection_formats = {}
@@ -101,17 +97,19 @@ class MessagesApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'message' in params:
-            body_params = params['message']
+        if "message" in params:
+            body_params = params["message"]
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params["Content-Type"] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/json"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basic']  # noqa: E501
+        auth_settings = ["basic"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/messages', 'POST',
+            "/messages",
+            "POST",
             path_params,
             query_params,
             header_params,
@@ -120,8 +118,9 @@ class MessagesApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async=params.get("async"),
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )

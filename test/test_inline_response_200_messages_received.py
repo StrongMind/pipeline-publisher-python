@@ -16,7 +16,9 @@ from __future__ import absolute_import
 import unittest
 
 import pipeline_publisher_python
-from pipeline_publisher_python.models.inline_response_200_messages_received import InlineResponse200MessagesReceived  # noqa: E501
+from pipeline_publisher_python.models.inline_response_200_messages_received import (
+    InlineResponse200MessagesReceived
+)  # noqa: E501
 from pipeline_publisher_python.rest import ApiException
 
 
@@ -36,5 +38,5 @@ class TestInlineResponse200MessagesReceived(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
