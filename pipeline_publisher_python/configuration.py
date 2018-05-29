@@ -24,7 +24,6 @@ from six.moves import http_client as httplib
 
 
 class TypeWithDefault(type):
-
     def __init__(cls, name, bases, dct):
         super(TypeWithDefault, cls).__init__(name, bases, dct)
         cls._default = None
