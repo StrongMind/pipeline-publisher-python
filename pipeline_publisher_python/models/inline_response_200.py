@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from pipeline_publisher_python.models.inline_response_200_messages_received import (
+from pipeline_publisher_python.models.inline_response200_messages_received import (
     InlineResponse200MessagesReceived
 )  # noqa: F401,E501
 

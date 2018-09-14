@@ -30,19 +30,22 @@ class InlineResponse200MessagesReceived(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    swagger_types = {"since_timestamp": "str", "count": "int"}
+    swagger_types = {"since_timestamp": "str", "until_timestamp": "str", "count": "int"}
 
-    attribute_map = {"since_timestamp": "since_timestamp", "count": "count"}
+    attribute_map = {"since_timestamp": "since_timestamp", "until_timestamp": "until_timestamp", "count": "count"}
 
-    def __init__(self, since_timestamp=None, count=None):  # noqa: E501
+    def __init__(self, since_timestamp=None, until_timestamp=None, count=None):  # noqa: E501
         """InlineResponse200MessagesReceived - a model defined in Swagger"""  # noqa: E501
 
         self._since_timestamp = None
+        self._until_timestamp = None
         self._count = None
         self.discriminator = None
 
         if since_timestamp is not None:
             self.since_timestamp = since_timestamp
+        if until_timestamp is not None:
+            self.until_timestamp = until_timestamp
         if count is not None:
             self.count = count
 
@@ -66,6 +69,27 @@ class InlineResponse200MessagesReceived(object):
         """
 
         self._since_timestamp = since_timestamp
+
+    @property
+    def until_timestamp(self):
+        """Gets the until_timestamp of this InlineResponse200MessagesReceived.  # noqa: E501
+
+
+        :return: The until_timestamp of this InlineResponse200MessagesReceived.  # noqa: E501
+        :rtype: str
+        """
+        return self._until_timestamp
+
+    @until_timestamp.setter
+    def until_timestamp(self, until_timestamp):
+        """Sets the until_timestamp of this InlineResponse200MessagesReceived.
+
+
+        :param until_timestamp: The until_timestamp of this InlineResponse200MessagesReceived.  # noqa: E501
+        :type: str
+        """
+
+        self._until_timestamp = until_timestamp
 
     @property
     def count(self):

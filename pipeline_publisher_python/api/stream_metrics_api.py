@@ -42,7 +42,8 @@ class StreamMetricsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str count_since_timestamp: ISO 8601 compliant timestamp to perform message count calculations from. Example: 2018-04-12T23:54:57.595Z
+        :param str count_since_timestamp: ISO 8601 compliant timestamp to perform message count calculations from. Example: 2018-04-12T23:54:57.595123Z
+        :param str count_until_timestamp: ISO 8601 compliant timestamp to perform message count calculations until. Example: 2018-04-12T23:54:57.595123Z
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -63,13 +64,14 @@ class StreamMetricsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str count_since_timestamp: ISO 8601 compliant timestamp to perform message count calculations from. Example: 2018-04-12T23:54:57.595Z
+        :param str count_since_timestamp: ISO 8601 compliant timestamp to perform message count calculations from. Example: 2018-04-12T23:54:57.595123Z
+        :param str count_until_timestamp: ISO 8601 compliant timestamp to perform message count calculations until. Example: 2018-04-12T23:54:57.595123Z
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ["count_since_timestamp"]  # noqa: E501
+        all_params = ["count_since_timestamp", "count_until_timestamp"]  # noqa: E501
         all_params.append("async")
         all_params.append("_return_http_data_only")
         all_params.append("_preload_content")
@@ -89,6 +91,8 @@ class StreamMetricsApi(object):
         query_params = []
         if "count_since_timestamp" in params:
             query_params.append(("count_since_timestamp", params["count_since_timestamp"]))  # noqa: E501
+        if "count_until_timestamp" in params:
+            query_params.append(("count_until_timestamp", params["count_until_timestamp"]))  # noqa: E501
 
         header_params = {}
 

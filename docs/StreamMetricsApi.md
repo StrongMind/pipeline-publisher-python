@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **stream_metrics_get**
-> InlineResponse200 stream_metrics_get(count_since_timestamp=count_since_timestamp)
+> InlineResponse200 stream_metrics_get(count_since_timestamp=count_since_timestamp, count_until_timestamp=count_until_timestamp)
 
 Fetches metrics about the stream
 
@@ -27,11 +27,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = pipeline_publisher_python.StreamMetricsApi(pipeline_publisher_python.ApiClient(configuration))
-count_since_timestamp = 'count_since_timestamp_example' # str | ISO 8601 compliant timestamp to perform message count calculations from. Example: 2018-04-12T23:54:57.595Z (optional)
+count_since_timestamp = 'count_since_timestamp_example' # str | ISO 8601 compliant timestamp to perform message count calculations from. Example: 2018-04-12T23:54:57.595123Z (optional)
+count_until_timestamp = 'count_until_timestamp_example' # str | ISO 8601 compliant timestamp to perform message count calculations until. Example: 2018-04-12T23:54:57.595123Z (optional)
 
 try:
     # Fetches metrics about the stream
-    api_response = api_instance.stream_metrics_get(count_since_timestamp=count_since_timestamp)
+    api_response = api_instance.stream_metrics_get(count_since_timestamp=count_since_timestamp, count_until_timestamp=count_until_timestamp)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StreamMetricsApi->stream_metrics_get: %s\n" % e)
@@ -41,7 +42,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **count_since_timestamp** | **str**| ISO 8601 compliant timestamp to perform message count calculations from. Example: 2018-04-12T23:54:57.595Z | [optional] 
+ **count_since_timestamp** | **str**| ISO 8601 compliant timestamp to perform message count calculations from. Example: 2018-04-12T23:54:57.595123Z | [optional] 
+ **count_until_timestamp** | **str**| ISO 8601 compliant timestamp to perform message count calculations until. Example: 2018-04-12T23:54:57.595123Z | [optional] 
 
 ### Return type
 
